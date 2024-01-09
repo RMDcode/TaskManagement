@@ -1,0 +1,57 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+      <h2>Task Management App</h2>
+      <div class="d-flex">
+       <button type="button" (click)="clickAddTask()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Task</button>
+       <button routerLink="" style="margin-left: 5px;" class="btn btn-danger" type="button" data-bs-toggle="modal">Log Out</button>
+     </div>
+    </div>
+ </nav>
+ 
+ <table class="table mt-4">
+     <thead>
+         <tr>
+             <!--<th scope="col">Task Id</th>-->
+             <th scope="col">Tasks</th>
+             <th scope="col">Action</th>
+         </tr>
+     </thead>
+     <tbody>
+         <tr *ngFor="let data of allTaskData">
+             <!--<td>{{data.id}}</td>-->
+             <td>{{data.task}}</td>
+             <td>
+                 <button (click)="onEditTask(data)" class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button> &nbsp;
+                 <button (click)="deleteTask(data._id)" class="btn btn-danger" >Delete</button>
+             </td>
+         </tr>
+     </tbody>
+ </table>
+ 
+ 
+   
+   <!-- Modal -->
+   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="exampleModalLabel">Records</h5>
+           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+             <form [formGroup]="formValue">
+                 <div class="mb-3">
+                   <label class="form-label">Task</label>
+                   <input type="text" class="form-control" formControlName="task" placeholder="Task" id="exampleInputEmail1" aria-describedby="emailHelp">
+                 </div>
+               </form>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="clear">Close</button>
+           <button *ngIf="showAdd" type="button" class="btn btn-primary" (click)="addTask()">Add Details</button>
+           <button *ngIf="showBtn" type="button" class="btn btn-primary" (click)="updateTask()">Update</button>
+         </div>
+       </div>
+     </div>
+   </div>
+ 

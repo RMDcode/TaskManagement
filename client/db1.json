@@ -1,0 +1,41 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "task": "SharePoint Upload"
+    },
+    {
+      "id": 2,
+      "task": "Unpaid and Unbilled report"
+    },
+    {
+      "id": 3,
+      "task": "Read Books daily"
+    },
+    {
+      "id": 4,
+      "task": "Generate payroll daily"
+    },
+    {
+      "id": 5,
+      "task": "Generate billing daily"
+    },
+    {
+      "id": 6,
+      "task": "Keep coding"
+    }
+  ],
+  "signup": [
+    {
+      "name": "Admin",
+      "email": "Marvellous@gmail.com",
+      "mobile": 3164631649,
+      "password": "Admin@123",
+      "id": 2
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
